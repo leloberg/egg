@@ -1,0 +1,7 @@
+# Used instead of a root .dockerignore when building with this Dockerfile.
+**/node_modules
+**/dist
+.git
+periodicals
+lib/proto/index.js
+lib/proto/index.d.ts
