@@ -1,0 +1,11 @@
+# Arcane / Docker Compose: builds the planner straight from GitHub and serves it.
+# Open http://<server>:8080/ascension-planner/
+services:
+  ascension-planner:
+    build:
+      context: https://github.com/leloberg/egg.git#main
+      dockerfile: wasmegg/ascension-planner/Dockerfile
+    image: ascension-planner:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
