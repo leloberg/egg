@@ -1,11 +1,9 @@
-# Arcane / Docker Compose: builds the planner straight from GitHub and serves it.
+# Arcane / Docker Compose: runs the prebuilt image that GitHub Actions publishes
+# (.github/workflows/ascension-planner-image.yml).
 # Open http://<server>:8080/ascension-planner/
 services:
   ascension-planner:
-    build:
-      context: https://github.com/leloberg/egg.git#main
-      dockerfile: wasmegg/ascension-planner/Dockerfile
-    image: ascension-planner:latest
+    image: ghcr.io/leloberg/ascension-planner:latest
     ports:
       - "8080:80"
     restart: unless-stopped
